@@ -1,0 +1,29 @@
+<h2>Products</h2>
+
+<% if @products.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image Url</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <th><%= product.title %></th>
+          <th><%= product.description %></th>
+          <th><%= product.image_url %></th>
+          <th><%= product.price %></th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No products found</p>
+<% end %>
+
+<%= link_to "New Product", new_depot_product_path %>
