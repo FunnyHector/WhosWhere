@@ -1,0 +1,11 @@
+<%= notice %>
+
+Title: <%= @product.title %>
+
+Description: <%= @product.description %>
+
+Image url: <%= @product.image_url %>
+
+Price: <%= @product.price %>
+
+<%= link_to 'Edit', edit_depot_product_path(@product) %> | <%= link_to 'Back', depot_products_path %>

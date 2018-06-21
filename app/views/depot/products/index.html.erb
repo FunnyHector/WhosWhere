@@ -1,3 +1,5 @@
+<%= notice %>
+
 <h2>Products</h2>
 
 <% if @products.present? %>
@@ -8,6 +10,7 @@
         <th>Description</th>
         <th>Image Url</th>
         <th>Price</th>
+        <th>Actions</th>
       </tr>
     </thead>
 
@@ -15,9 +18,14 @@
       <% @products.each do |product| %>
         <tr>
           <th><%= product.title %></th>
-          <th><%= product.description %></th>
-          <th><%= product.image_url %></th>
+          <th><%= truncate(strip_tags(product.description), length: 80) %></th>
+          <th><%= image_tag(product.image_url, class: 'list_image') if product.image_url.present? %></th>
           <th><%= product.price %></th>
+          <th>
+            <%= link_to 'Show', product %>
+            <%= link_to 'Edit', edit_depot_product_path(product) %>
+            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </th>
         </tr>
       <% end %>
     </tbody>
