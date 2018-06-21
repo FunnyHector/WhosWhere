@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Depot
-  class ProductsController < ApplicationController
+  class ProductsController < BaseDepotController
     before_action :find_product, only: [:show, :edit, :destroy, :update]
 
     def index
@@ -29,9 +29,7 @@ module Depot
     end
 
     def update
-      @product = Product.update(product_params)
-
-      if @product.save
+      if @product.update(product_params)
         redirect_to depot_product_path(@product), notice: 'Product was successfully updated.'
       else
         render :edit
@@ -53,7 +51,7 @@ module Depot
     end
 
     def product_params
-      params.require(:depot_product).permit(:title, :description, :image_url, :price)
+      params.require(:product).permit(:title, :description, :image_url, :price)
     end
   end
 end
