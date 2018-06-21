@@ -5,4 +5,4 @@
 2. Currently the params passed in from views have the namespace as prefix, like `{ depot_product: { name: "iPhone" } }`. 
    That creates inconvenience in controller. Find a way to get around it.
   
-3. Nullify the attribute if it's blank. This article has a good way: https://solidfoundationwebdev.com/blog/posts/make-values-nil-if-blank-data-normalization-in-rails
+3. \[DONE\] ~~Nullify the attribute if it's blank. This article has a good way: https://solidfoundationwebdev.com/blog/posts/make-values-nil-if-blank-data-normalization-in-rails~~
