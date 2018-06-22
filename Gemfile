@@ -49,6 +49,9 @@ group :development, :test do
 
   gem 'parallel_rspec'
 
+  # install Fixation to get faster test startup under spring. only loaded in test mode, so no prod impact.
+  # gem 'fixation'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 

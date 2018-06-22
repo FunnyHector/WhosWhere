@@ -4,7 +4,7 @@ module Depot
   class BaseDepotController < ApplicationController
     SUB_APP_NAME = "depot"
 
-    before_action :remove_sub_app_prefix_from_params, only: [:create, :update, :destroy, :update]
+    before_action :remove_sub_app_prefix_from_params, only: [:create, :update]
 
     private
 
