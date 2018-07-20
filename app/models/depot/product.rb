@@ -4,6 +4,12 @@ module Depot
   class Product < ApplicationRecord
     include NullifyBlankValues
 
+    has_many :shopping_cart_items
+    has_many :shopping_carts, through: :shopping_cart_items
+
+    has_many :order_items
+    has_many :orders, through: :order_items
+
     validates :description, presence: true
     validates :image_url, allow_blank: true,
               format: { with: /\.(gif|jpg|jpeg|png)\z/i, message: "must be a URL for GIF, JPG, JPEG, or PNG image" }
