@@ -4,7 +4,7 @@ module Depot
   class DepotBaseController < ActionController::Base
     SUB_APP_NAME = "depot"
 
-    layout "depot"
+    layout "depot/depot_base"
 
     before_action :remove_sub_app_prefix_from_params, only: [:create, :update]
 
