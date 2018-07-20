@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 module Depot
-  class BaseDepotController < ApplicationController
+  class DepotBaseController < ActionController::Base
     SUB_APP_NAME = "depot"
+
+    layout "depot"
 
     before_action :remove_sub_app_prefix_from_params, only: [:create, :update]
 

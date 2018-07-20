@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Who's Here</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'whos_here/whos_here_base', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'whos_here/whos_here_base', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body class="<%= controller.controller_name %>">
+<%= yield %>
+</body>
+</html>

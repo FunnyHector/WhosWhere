@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Depot
-  class ProductsController < BaseDepotController
+  class ProductsController < DepotBaseController
     before_action :find_product, only: [:show, :edit, :destroy, :update]
 
     def index

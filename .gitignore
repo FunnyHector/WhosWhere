@@ -190,3 +190,5 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+# don't version-control the schema
+/db/schema.rb
