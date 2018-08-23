@@ -20,5 +20,16 @@ module Depot
               numericality: { greater_than_or_equal_to: 0.00, less_than: 1000000 }
 
     before_save :nullify_blank_values
+
+    before_destroy :ensure_not_referenced_by_any_shopping_cart_item
+
+    private
+
+    def ensure_not_referenced_by_any_shopping_cart_item
+      unless shopping_cart_items.empty?
+        errors.add(:base, "Product still referenced by shopping cart")
+        throw :abort
+      end
+    end
   end
 end

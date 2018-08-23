@@ -6,11 +6,12 @@
   <% @products.each do |product| %>
     <% cache product do %>
       <div class="entry">
-        <%= image_tag(product.image_url) %>
+        <%= image_tag(product.image_url, class: 'list_image') if product.image_url.present? %>
         <h3><%= product.title %></h3>
         <p><%= sanitize(product.description) %></p>
         <div class="price_line">
           <span class="price"><%= number_to_currency(product.price, raise: true) %></span>
+          <%= button_to "Add to Cart", depot_shopping_cart_items_path(product_id: product) %>
         </div>
       </div>
     <% end %>
